@@ -6,7 +6,7 @@ async function main() {
     // Call the functions
     createPDA();
 
-    createDataRequestTemplate();
+    // createDataRequestTemplate();
   } catch (error) {
     console.log(error); // Can log it for degugging
   }
