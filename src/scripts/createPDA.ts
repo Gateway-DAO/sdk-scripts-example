@@ -1,4 +1,4 @@
-import { gatewayInstance } from "../prepareInstance";
+import { gatewayInstance } from "../GatewayInstance";
 import { UserIdentifierType } from "@gateway-dao/sdk";
 
 export async function createPDA() {

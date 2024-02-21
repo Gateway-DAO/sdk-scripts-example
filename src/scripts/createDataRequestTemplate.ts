@@ -1,4 +1,4 @@
-import { gatewayInstance } from "../prepareInstance";
+import { gatewayInstance } from "../GatewayInstance";
 
 export async function createDataRequestTemplate() {
   const { createDataRequestTemplate } =
