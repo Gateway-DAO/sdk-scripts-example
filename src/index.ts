@@ -1,14 +1,15 @@
 import { createDataRequestTemplate } from "./scripts";
 import { createPDA } from "./scripts";
+import { createOrganization } from "./scripts/createOrganization";
 
 async function main() {
   try {
-    // Call the functions
     createPDA();
 
     // createDataRequestTemplate();
+    // createOrganization();
   } catch (error) {
-    console.log(error); // Can log it for degugging
+    console.log(error);
   }
 }
 
