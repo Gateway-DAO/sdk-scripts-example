@@ -1,6 +1,5 @@
 import {
   changePDASatus,
-  createDataRequestTemplate,
   getDataRequestTemplate,
   getPDA,
   updatePDA,
@@ -15,26 +14,28 @@ import {
   updateOrganization,
 } from "./scripts/Organization";
 
+import { createDataRequestTemplate } from "./scripts";
+
 // NOTE: WE HAVE ONLY IMPLEMENTED IMPORTANT CRUD METHODS. AUTH AND USER ARE NOT IMPLEMENTED.
 async function main() {
   try {
     // --------- PDA ---------
-    createPDA();
-    updatePDA();
-    changePDASatus();
-    getPDA();
+    // await createPDA();
+    // await updatePDA();
+    // await changePDASatus();
+    await getPDA();
 
     // --------- DATA REQUEST TEMPLATE ---------
-    createDataRequestTemplate();
-    getDataRequestTemplate();
-
+    await createDataRequestTemplate();
+    await getDataRequestTemplate();
     // --------- DATA REQUEST TEMPLATE ---------
-    createOrganization();
-    addMemberToOrganization();
-    changeMemberRole();
-    removeMemberFromOrganization();
-    updateOrganization();
-    getOrganization();
+    await createOrganization();
+    await addMemberToOrganization();
+    await changeMemberRole();
+    await removeMemberFromOrganization();
+    await updateOrganization();
+    await getOrganization();
+    await createDataRequestTemplate();
   } catch (error) {
     console.log(error);
   }
