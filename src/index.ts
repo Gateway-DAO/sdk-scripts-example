@@ -1,13 +1,40 @@
-import { createDataRequestTemplate } from "./scripts";
+import {
+  changePDASatus,
+  createDataRequestTemplate,
+  getDataRequestTemplate,
+  getPDA,
+  updatePDA,
+} from "./scripts";
 import { createPDA } from "./scripts";
-import { createOrganization } from "./scripts/createOrganization";
+import {
+  addMemberToOrganization,
+  changeMemberRole,
+  createOrganization,
+  getOrganization,
+  removeMemberFromOrganization,
+  updateOrganization,
+} from "./scripts/Organization";
 
+// NOTE: WE HAVE ONLY IMPLEMENTED IMPORTANT CRUD METHODS. AUTH AND USER ARE NOT IMPLEMENTED.
 async function main() {
   try {
+    // --------- PDA ---------
     createPDA();
+    updatePDA();
+    changePDASatus();
+    getPDA();
 
-    // createDataRequestTemplate();
-    // createOrganization();
+    // --------- DATA REQUEST TEMPLATE ---------
+    createDataRequestTemplate();
+    getDataRequestTemplate();
+
+    // --------- DATA REQUEST TEMPLATE ---------
+    createOrganization();
+    addMemberToOrganization();
+    changeMemberRole();
+    removeMemberFromOrganization();
+    updateOrganization();
+    getOrganization();
   } catch (error) {
     console.log(error);
   }

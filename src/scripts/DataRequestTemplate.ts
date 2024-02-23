@@ -26,3 +26,11 @@ export async function createDataRequestTemplate() {
     });
   console.log(createDataRequestTemplate);
 }
+
+export async function getDataRequestTemplate() {
+  const { dataRequestTemplate } =
+    await gatewayInstance.dataRequestTemplate.getDataRequestTemplate(
+      "exisiting-id-of-your-template"
+    );
+  console.log(dataRequestTemplate);
+}
