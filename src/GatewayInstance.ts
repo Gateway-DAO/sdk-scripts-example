@@ -1,4 +1,7 @@
 import { Gateway } from "@gateway-dao/sdk";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 export const gatewayInstance = new Gateway({
   url: "https://sandbox.protocol.mygateway.xyz/graphql",
