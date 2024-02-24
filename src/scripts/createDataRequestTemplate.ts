@@ -11,3 +11,24 @@ export async function createDataRequest() {
   );
   console.log(createDataRequest);
 }
+
+export async function getDataRequest() {
+  const { dataRequest } = await gatewayInstance.request.getDataRequest(
+    "<--request id of the request template -->"
+  );
+  console.log(dataRequest);
+}
+
+export async function getDataRequests() {
+  const { dataRequests } = await gatewayInstance.request.getDataRequests();
+  console.log(dataRequests);
+}
+
+export async function dataRequestStatus() {
+  const { dataRequestStatus } =
+    await gatewayInstance.request.getDataRequestStatus(
+      "<--request id of the request template -->"
+    );
+
+  console.log(dataRequestStatus);
+}
