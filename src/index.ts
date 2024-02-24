@@ -22,6 +22,12 @@ import {
   getDataRequests,
 } from "./scripts";
 
+import {
+  getTransaction,
+  getTransactions,
+  getTransactionCount,
+} from "./scripts";
+
 // NOTE: WE HAVE ONLY IMPLEMENTED IMPORTANT CRUD METHODS. AUTH AND USER ARE NOT IMPLEMENTED.
 async function main() {
   try {
@@ -47,6 +53,12 @@ async function main() {
     await getDataRequest();
     await createDataRequest();
     await getDataRequests();
+
+    // -------- Transaction ------------------
+
+    await getTransaction();
+    await getTransactions();
+    await getTransactionCount();
   } catch (error) {
     console.log(error);
   }
