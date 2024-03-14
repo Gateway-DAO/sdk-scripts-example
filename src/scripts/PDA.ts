@@ -23,7 +23,7 @@ export async function updatePDA() {
   // add the fields you want to update
 
   const { updatePDA } = await gatewayInstance.pda.updatePDA({
-    id: "exisiting-id-of-your-pda",
+    id: "existing-id-of-your-pda",
     title: "Changed PDA title",
   });
   console.log(updatePDA);
@@ -31,7 +31,7 @@ export async function updatePDA() {
 
 export async function changePDASatus() {
   const { changePDAStatus } = await gatewayInstance.pda.changePDAStatus({
-    id: "exisiting-id-of-your-pda",
+    id: "existing-id-of-your-pda",
     status: PDAStatus.Valid,
   });
   console.log(changePDAStatus);

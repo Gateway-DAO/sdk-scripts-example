@@ -30,7 +30,7 @@ export async function createDataRequestTemplate() {
 export async function getDataRequestTemplate() {
   const { dataRequestTemplate } =
     await gatewayInstance.dataRequestTemplate.getDataRequestTemplate(
-      "exisiting-id-of-your-template"
+      "9f27397e-27f2-4c30-b1b7-829371de4df5"
     );
   console.log(dataRequestTemplate);
 }
