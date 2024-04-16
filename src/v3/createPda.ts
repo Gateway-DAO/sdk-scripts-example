@@ -1,8 +1,10 @@
 import axios from "axios";
 import cbor from "cbor";
+import dotenv from "dotenv";
+dotenv.config();
 
 const createPDAMutation = (body: any) => ({
-  query: `mutation createPDA{
+  query: `mutation createPDA($signingKey:String!,$title:String!,$description:String!,$owner:String!,$dataModelId:String!,$image:String!,$claim:JSON!){
   createPDA(input: {signingKey: $signingKey
             signature: $signature
             data: {
@@ -11,10 +13,6 @@ const createPDAMutation = (body: any) => ({
                 owner: {
                     type: EVM
                     value: $owner
-                }
-                organization: {
-                	type: GATEWAY_ID
-                	value: $organization
                 }
                 dataModelId: $dataModelId
                 image: $image
@@ -40,7 +38,6 @@ const createPDAMutation = (body: any) => ({
 });
 
 const PDA_BODY = {
-  signingKey: "",
   title: "Gateway Core Team Member",
   description:
     "Given to people that have had contributed to the beginning of Gateway",
@@ -63,7 +60,13 @@ export const createPDA = async () => {
 
     const { data } = await axios.post(
       process.env.PROTOCOL_V3_ENDPOINT!,
-      JSON.stringify(createPDAMutation({ ...PDA_BODY, signature: "" })),
+      JSON.stringify(
+        createPDAMutation({
+          ...PDA_BODY,
+          signature: "",
+          signingKey: "",
+        })
+      ),
       {
         headers: {
           "Content-Type": "application/json",
@@ -73,7 +76,7 @@ export const createPDA = async () => {
       }
     );
     console.log(data);
-  } catch (error) {
-    console.log(error);
+  } catch (error: any) {
+    console.log(error.response.data);
   }
 };

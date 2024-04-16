@@ -1,6 +1,7 @@
 import axios from "axios";
 import dotenv from "dotenv";
 import { generateRSAKeyPair } from "./utils/generateRSAKeyPair";
+import { generateDID } from "./utils/generateDID";
 dotenv.config();
 
 const createUserNonceMutation = (data: any) => ({
@@ -14,7 +15,6 @@ const createUserNonceMutation = (data: any) => ({
   variables: {
     signingKey: data.signingKey,
     encryptionKey: data.encryptionKey,
-    did: "did:gatewayid:234",
   },
 });
 
@@ -30,11 +30,11 @@ const createUserMutation = (data: any) => ({
 });
 
 const CREATE_USER_NONCE_BODY = {
-  signingKey: "",
+  signingKey: "your-wallet",
 };
 
 const CREATE_USER_BODY = {
-  signingKey: "",
+  signingKey: "your-wallet",
 };
 
 export const createUserNonce = async () => {
@@ -43,12 +43,15 @@ export const createUserNonce = async () => {
     // ELSE YOU WONT BE ABLE TO DECRYPT YOUR DATA!
     const { publicPem, privateKey } = generateRSAKeyPair();
 
+    const did = generateDID(publicPem);
+
     const { data } = await axios.post(
       process.env.PROTOCOL_V3_ENDPOINT!,
       JSON.stringify(
         createUserNonceMutation({
           ...CREATE_USER_NONCE_BODY,
           encryptionKey: publicPem,
+          did,
         })
       ),
       {
