@@ -6,26 +6,24 @@ const getPDASQuery = () => ({
   query: `query pdas{
   PDAs{
     id
-    
   }
 }`,
-  variables: {},
 });
 
 export const getPDAS = async () => {
   try {
     const { data } = await axios.post(
       process.env.PROTOCOL_V3_ENDPOINT!,
-      JSON.stringify(getPDASQuery),
+      JSON.stringify(getPDASQuery()),
       {
         headers: {
           "Content-Type": "application/json",
-          "x-api-key": process.env.API_KEY as string,
-          Authorization: process.env.BEARER as string,
+          "x-api-key": process.env.V3_API_KEY as string,
+          Authorization: `Bearer ${process.env.V3_TOKEN as string}`,
         },
       }
     );
-    console.log(data);
+    console.log(data.data);
   } catch (error) {
     console.log(error);
   }
