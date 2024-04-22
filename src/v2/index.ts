@@ -1,5 +1,6 @@
 import {
   changePDASatus,
+  createDataModel,
   getDataRequestTemplate,
   getPDA,
   updatePDA,
@@ -32,33 +33,36 @@ import {
 async function main() {
   try {
     // --------- PDA ---------
-    await createPDA();
-    await updatePDA();
-    await changePDASatus();
-    await getPDA();
+    // await createPDA();
+    // await updatePDA();
+    // await changePDASatus();
+    // await getPDA();
 
-    // --------- DATA REQUEST TEMPLATE ---------
-    await createDataRequestTemplate();
-    await getDataRequestTemplate();
-    // --------- ORGANISATION ---------
-    await createOrganization();
-    await addMemberToOrganization();
-    await changeMemberRole();
-    await removeMemberFromOrganization();
-    await updateOrganization();
-    await getOrganization();
+    // --------- DATA MODEL ---------
 
-    // --------- DATA REQUEST---------------
-    await dataRequestStatus();
-    await getDataRequest();
-    await createDataRequest();
-    await getDataRequests();
+    await createDataModel();
+    // // --------- DATA REQUEST TEMPLATE ---------
+    // await createDataRequestTemplate();
+    // await getDataRequestTemplate();
+    // // --------- ORGANISATION ---------
+    // await createOrganization();
+    // await addMemberToOrganization();
+    // await changeMemberRole();
+    // await removeMemberFromOrganization();
+    // await updateOrganization();
+    // await getOrganization();
 
-    // -------- Transaction ------------------
+    // // --------- DATA REQUEST---------------
+    // await dataRequestStatus();
+    // await getDataRequest();
+    // await createDataRequest();
+    // await getDataRequests();
 
-    await getTransaction();
-    await getTransactions();
-    await getTransactionCount();
+    // // -------- Transaction ------------------
+
+    // await getTransaction();
+    // await getTransactions();
+    // await getTransactionCount();
   } catch (error) {
     console.log(error);
   }
