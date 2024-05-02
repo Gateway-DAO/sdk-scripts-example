@@ -4,11 +4,11 @@ import { getPDAS } from "./getPda";
 
 const main = async () => {
   try {
-    // await createUserNonce();
+    await createUserNonce();
     // await createUser();
 
     // await getPDAS();
-    await createPDA();
+    // await createPDA();
   } catch (error) {
     console.log(error);
   }
