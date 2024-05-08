@@ -41,3 +41,15 @@ export async function getPDA() {
   const { PDA } = await gatewayInstance.pda.getPDA("exisiting-id-of-your-pda");
   console.log(PDA);
 }
+
+export async function getAllPDAs() {
+  const pdas = await gatewayInstance.pda.getPDAs({
+    filter: {
+      issuer: { type: "GATEWAY_ID", value: "saviour1002" },
+      owner: { type: "GATEWAY_ID", value: "user" },
+      // organization: { type: "GATEWAY_ID", value: "" }, // pass the organization id if you want to filter by organization
+    },
+  });
+
+  console.log(pdas);
+}

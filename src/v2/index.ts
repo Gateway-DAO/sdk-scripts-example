@@ -1,6 +1,7 @@
 import {
   changePDASatus,
   createDataModel,
+  getAllPDAs,
   getDataRequestTemplate,
   getPDA,
   updatePDA,
@@ -37,10 +38,11 @@ async function main() {
     // await updatePDA();
     // await changePDASatus();
     // await getPDA();
+    await getAllPDAs();
 
     // --------- DATA MODEL ---------
 
-    await createDataModel();
+    // await createDataModel();
     // // --------- DATA REQUEST TEMPLATE ---------
     // await createDataRequestTemplate();
     // await getDataRequestTemplate();
