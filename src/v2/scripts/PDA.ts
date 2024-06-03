@@ -1,18 +1,25 @@
 import { gatewayInstance } from "../GatewayInstance";
-import { PDAStatus, UserIdentifierType } from "@gateway-dao/sdk";
+import {
+  PDAStatus,
+  UserIdentifierType,
+  OrganizationIdentifierType,
+} from "@gateway-dao/sdk";
 
 export async function createPDA() {
   let obj = {
-    dataModelId: "9f27397e-27f2-4c30-b1b7-829371de4df5",
-    description: "Description of the PDA",
-    title: "Favorite Person on Crypto Twitter",
+    dataModelId: "7f1e400e-b761-4e35-913d-09e500f36e79",
+    description: "TESTING MODEL",
+    title: "TESTING MODEL",
     claim: {
-      handleName: "@gateway_xyz",
-      favoritePosts: ["awesome"],
+      model_id: "123",
     },
     owner: {
       type: UserIdentifierType.GATEWAY_ID,
-      value: "saviour1002",
+      value: "YOUR_GATEWAY_ID",
+    },
+    organization: {
+      type: OrganizationIdentifierType.GATEWAY_ID,
+      value: "YOUR_ORG_ID",
     },
   };
   const { createPDA } = await gatewayInstance.pda.createPDA(obj);

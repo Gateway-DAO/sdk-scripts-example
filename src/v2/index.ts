@@ -34,11 +34,11 @@ import {
 async function main() {
   try {
     // --------- PDA ---------
-    // await createPDA();
+    await createPDA();
     // await updatePDA();
     // await changePDASatus();
     // await getPDA();
-    await getAllPDAs();
+    // await getAllPDAs();
 
     // --------- DATA MODEL ---------
 
