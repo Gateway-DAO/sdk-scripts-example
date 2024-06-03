@@ -11,11 +11,11 @@ This is a one stop shop for all the sdk interactions with the Gateway Protocol
 
 ```bash
 npm install
-npm start-v2
+npm run start-v2
 ```
 
-## If you want to run v3 version of Gateway Protocol 
+## If you want to run v3 version of Gateway Protocol
+
 1. Get the `V3_API_KEY` and create a new account and you will get jwt which you can pass as `V3_TOKEN`
 2. Note that v3 is still under development so by using v3 you might face errors if API is changed.
 3. Please contact us if you are getting errors in v3 so that we can help/update this repo.
-  
