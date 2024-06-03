@@ -6,8 +6,9 @@ This is a one stop shop for all the sdk interactions with the Gateway Protocol
 
 1. Clone the repository
 2. Fetch your API Key and Access Token from the Gateway Protocol Dashboard
-3. Fill in the API Key and Access Token in the `src/v2/GatewayInstance.ts` file(use .env files and don't expose them in code)
-4. Run the following commands to start the server
+3. Create a `.env` file in the root directory and copy the contents of `.env.example` into it.
+4. Fill in the API Key and Access Token in the `.env` file (use .env files and don't expose them in code)
+5. Run the following commands to start the server
 
 ```bash
 npm install
