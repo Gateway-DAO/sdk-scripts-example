@@ -1,14 +1,18 @@
-import { createPDA } from "./createPda";
-import { createUser, createUserNonce } from "./createUser";
-import { getPDAS } from "./getPda";
+import { PDAStatusV3 } from "@gateway-dao/sdk/dist/src/types";
+import {
+  changePDAStatusV3,
+  createPDAV3,
+  getPDAV3,
+  updatePDAV3,
+} from "./scripts/PDA";
 
 const main = async () => {
   try {
-    await createUserNonce();
-    // await createUser();
+    const { createPDA } = await createPDAV3();
+    await updatePDAV3(createPDA.id);
+    await changePDAStatusV3(createPDA.id, PDAStatusV3.EXPIRED);
+    await getPDAV3(createPDA.id);
 
-    // await getPDAS();
-    // await createPDA();
   } catch (error) {
     console.log(error);
   }
