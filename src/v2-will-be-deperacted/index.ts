@@ -31,6 +31,7 @@ import {
 } from "./scripts";
 
 // NOTE: WE HAVE ONLY IMPLEMENTED IMPORTANT CRUD METHODS. AUTH AND USER ARE NOT IMPLEMENTED.
+// NOTE: SOON V2 WILL BE DEPERACTED KINDLY USE V3 SDK CHECK V3 EXAMPLES
 async function main() {
   try {
     // --------- PDA ---------

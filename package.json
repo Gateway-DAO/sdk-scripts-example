@@ -4,14 +4,13 @@
   "description": "",
   "scripts": {
     "start-v2": "ts-node src/v2/index.ts",
-    "start-v3": "ts-node src/v3-under-development/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start-v3": "ts-node src/v3-under-development/index.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@gateway-dao/sdk": "^2.1.0-develop.3",
+    "@gateway-dao/sdk": "^2.1.0-develop.10",
     "axios": "^1.6.8",
     "dotenv": "^16.4.5"
   },
