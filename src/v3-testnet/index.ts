@@ -39,10 +39,33 @@ import {
   getRequestsReceivedV3,
   getRequestsSentV3,
 } from "../v3-testnet/scripts/DataRequest";
+import {
+  checkDIDAvailabilityV3,
+  checkUsernameAvailabilityV3,
+  createUserNonceV3,
+  createUserV3,
+  loginUserV3,
+} from "../v3-testnet/scripts/Auth";
 
 const main = async () => {
   try {
     // --------- AUTH ---------
+    // await checkDIDAvailabilityV3("sample-did");
+    // await checkUsernameAvailabilityV3("sample-username");
+    // more parameters which are optional
+    // await createUserNonceV3({
+    //   did: "sample-did",
+    //   signingKey: "wallet-address",
+    // });
+    // await createUserV3({
+    //   signature: "sample-signature",
+    //   signingKey: "wallet-address",
+    // });
+    // await loginUserV3({
+    //   did: "sample-did",
+    //   signature: "sample-signature",
+    //   signingKey: "wallet-address",
+    // });
 
     // --------- PDA ---------
     const { createPDA } = await createPDAV3();

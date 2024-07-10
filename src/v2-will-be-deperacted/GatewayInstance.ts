@@ -1,4 +1,4 @@
-import { Gateway } from "@gateway-dao/sdk";
+import { Gateway } from "@gateway-dao/gateway-sdk-legacy";
 import dotenv from "dotenv";
 
 dotenv.config();

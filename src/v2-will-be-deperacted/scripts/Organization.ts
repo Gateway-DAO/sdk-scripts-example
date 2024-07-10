@@ -1,4 +1,4 @@
-import { OrganizationIdentifierType } from "@gateway-dao/sdk";
+import { OrganizationIdentifierType } from "@gateway-dao/gateway-sdk-legacy";
 import { gatewayInstance } from "../GatewayInstance";
 
 export async function createOrganization() {

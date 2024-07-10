@@ -3,7 +3,7 @@ import {
   PDAStatus,
   UserIdentifierType,
   OrganizationIdentifierType,
-} from "@gateway-dao/sdk";
+} from "@gateway-dao/gateway-sdk-legacy";
 
 export async function createPDA() {
   let obj = {
